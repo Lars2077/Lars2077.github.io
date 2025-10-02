@@ -1,95 +1,145 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>给崔宝的小贺卡</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #fff;
-      transition: background 2s ease-in-out;
-      overflow: hidden;
-    }
-    .heart {
-      width: 80px;
-      height: 80px;
-      background-color: red;
-      transform: rotate(-45deg);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-45deg);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .heart:before,
-    .heart:after {
-      content: "";
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      background-color: red;
-      border-radius: 50%;
-    }
-    .heart:before {
-      top: -40px;
-      left: 0;
-    }
-    .heart:after {
-      top: 0;
-      left: 40px;
-    }
-    .hidden {
-      display: none;
-    }
-    .message {
-      position: absolute;
-      top: 20px;   /* 距离页面顶部 */
-      left: 20px;  /* 距离页面左侧 */
-      font-size: 22px;
-      color: deeppink; /* 黑色文字 */
-      font-family: "Comic Sans MS", "KaiTi", cursive; /* 柔和的字体 */
-      text-align: left; /* 左对齐 */
-      white-space: pre-line;
-      max-width: 60%;
-      line-height: 1.6;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            color: #fff;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-size: cover;
+            animation: changeBackground 15s infinite;
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background: url('image1.jpg') no-repeat center center fixed;
+            }
+            33% {
+                background: url('image2.jpg') no-repeat center center fixed;
+            }
+            66% {
+                background: url('image3.jpg') no-repeat center center fixed;
+            }
+            100% {
+                background: url('image1.jpg') no-repeat center center fixed;
+            }
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.6); 
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 80%;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .content h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 56px;
+            color: #FFD700;
+        }
+        .content p {
+            font-family: 'Sacramento', cursive;
+            font-size: 28px;
+            margin: 20px 0;
+            color: #FF69B4;
+        }
+        .content .message {
+            font-size: 22px;
+            color: #FF69B4;
+        }
+        .content .signature {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #FF69B4;
+        }
+
+        .music {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .music audio {
+            display: none;
+        }
+
+        /* 添加渐变效果和动感 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* 按钮样式 */
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 69, 0, 0.8);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 69, 0, 1);
+            transform: scale(1.1);
+        }
+
+    </style>
 </head>
 <body>
-  <div id="heart" class="heart"></div>
-  <div id="message" class="message hidden"></div>
-  <audio id="music" src="爱很简单.mp3"></audio>
 
-  <script>
-    const IMAGE_URL = "宝.png"; // 替换为背景图
-    const MESSAGE = "小崔，今天就是七夕了，不知不觉我也和你认识三个多月了。\n虽然mbti测试对我定位为e人，但我感觉自己是个实打实的i人，\n所以我真的很感谢自己有勇气和你打招呼，和你加好友，和这么好的人相识。\n同时我也很感谢你没有拒绝我为数不多的热情，愿意给我一个和你认识的机会。\n6月13日我们第一次见面了😍😍😍，这也是我第一次面基，老实说，我特别特别紧张，甚至当时有点犹豫要不要答应，\n我害怕自己没话说或者说错话，害怕见面后我不是你能接受的类型。\n幸运的是，虽然到现在我都不知道你对我的感觉，但我从那天接触后就觉得你特别特别好，\n优秀自律体贴……没有任何我不喜欢的点，然后我好像渐渐确定我对你有喜欢的感觉了。\n但是，我有时候会胡思乱想，这么优秀的人，会不会觉得我这个天真的大学生幼稚，有时候我不敢乱发乱分享一些东西，怕踩到你的雷点，给我的印象扣分，有时候我特别特别想和你说话打视频，但怕你在忙打扰到你，怕你觉得我越界，毕竟，我们还没有……\n有时候，我想到自己经济还没独立，想到自己没办法给你什么支撑，就很烦很烦，很无力，包括现在写这个小作文的时候，我都在考虑会不会显得太矫情了(还是我太敏感？）。\n归根到底，是我还不够了解你，不知道你喜欢什么，不喜欢什么，对什么感兴趣，把什么当作雷点。不过，时间还很长，我会努力朝你走，慢慢了解你，把优秀的你当作我学业上的榜样👍，继续努力。\n接下来，我不知道怎么说了，我只知道我是真的特别喜欢你，\n我说的每一句想你也不是花言巧语(是当时真的想你就立刻给你发了🥰）。\n哎呀，反正就是，❤七夕快乐❤，天天都要快乐！";
+    <div class="content">
+        <h1>生日快乐，崔宝！</h1>
+        <p>每天都要开心，每年都要幸福健康</p>
+        <p class="message">祝你成功上岸，一起加油呀</p>
+        <p class="signature">—— 小楠</p>
+    </div>
 
-    const heart = document.getElementById("heart");
-    const messageDiv = document.getElementById("message");
-    const music = document.getElementById("music");
+    <div class="music">
+        <audio id="music">
+            <source src="爱里.mp3" type="audio/mp3">
+        </audio>
+    </div>
 
-    heart.addEventListener("click", () => {
-      // 切换背景
-      document.body.style.background = `url(${IMAGE_URL}) center/cover no-repeat`;
-      // 播放音乐
-      music.play();
-      // 隐藏爱心，显示文字
-      heart.classList.add("hidden");
-      messageDiv.classList.remove("hidden");
-      // 打字机效果
-      let i = 0;
-      function typeWriter() {
-        if (i < MESSAGE.length) {
-          const char = MESSAGE[i] === "\n" ? "<br/>" : MESSAGE[i];
-          messageDiv.innerHTML += char;
-          i++;
-          setTimeout(typeWriter, 150); // 打字速度更慢（150ms）
-        }
-      }
-      typeWriter();
-    });
-  </script>
+    <button class="button" id="playMusicBtn">点我召唤BGM</button>
+
+    <script>
+        const playMusicBtn = document.getElementById('playMusicBtn');
+        const music = document.getElementById('music');
+
+        playMusicBtn.addEventListener('click', () => {
+            // 播放音乐
+            music.play();
+
+            playMusicBtn.style.display = 'none';
+        });
+    </script>
+
 </body>
 </html>
