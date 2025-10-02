@@ -6,6 +6,7 @@
     <title>生日快乐</title>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <style>
+        /* 基本样式 */
         body {
             margin: 0;
             padding: 0;
@@ -18,9 +19,11 @@
             text-align: center;
             position: relative;
             background-size: cover;
+            background-position: center;
             animation: changeBackground 15s infinite;
         }
 
+        /* 背景轮播效果 */
         @keyframes changeBackground {
             0% {
                 background: url('image1.jpg') no-repeat center center fixed;
@@ -36,36 +39,38 @@
             }
         }
 
+        /* 内容容器 */
         .content {
             background: rgba(0, 0, 0, 0.6); 
             padding: 40px;
             border-radius: 15px;
-            max-width: 80%;
-            font-size: 24px;
+            width: 90%; /* 根据屏幕宽度自动调整 */
+            max-width: 600px; /* 最大宽度 */
+            font-size: 18px; /* 默认字体大小 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .content h1 {
             font-family: 'Sacramento', cursive;
-            font-size: 56px;
-            color: #FFD700;
+            font-size: 36px; /* 调整标题大小 */
+            color: #FFD700; /* 金色 */
         }
         .content p {
             font-family: 'Sacramento', cursive;
-            font-size: 28px;
+            font-size: 20px;
             margin: 20px 0;
-            color: #FF69B4;
+            color: #FF69B4; /* 粉色 */
         }
         .content .message {
-            font-size: 22px;
-            color: #FF69B4;
+            font-size: 18px;
+            color: #FF69B4; /* 粉色 */
         }
         .content .signature {
-            font-size: 24px;
+            font-size: 22px;
             margin-top: 20px;
             font-weight: bold;
-            color: #FF69B4;
         }
 
+        /* 音乐播放 */
         .music {
             position: absolute;
             bottom: 20px;
@@ -73,20 +78,6 @@
         }
         .music audio {
             display: none;
-        }
-
-        /* 添加渐变效果和动感 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .content {
-            animation: fadeIn 2s ease-in-out;
         }
 
         /* 按钮样式 */
@@ -97,9 +88,9 @@
             transform: translate(-50%, -50%);
             background-color: rgba(255, 69, 0, 0.8);
             color: white;
-            padding: 20px 40px;
+            padding: 12px 24px; /* 调整按钮大小 */
             border-radius: 50px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             border: none;
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -108,6 +99,26 @@
         .button:hover {
             background-color: rgba(255, 69, 0, 1);
             transform: scale(1.1);
+        }
+
+        /* 响应式字体和按钮调整 */
+        @media (max-width: 600px) {
+            .content h1 {
+                font-size: 28px;
+            }
+            .content p {
+                font-size: 16px;
+            }
+            .content .message {
+                font-size: 14px;
+            }
+            .content .signature {
+                font-size: 18px;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
         }
 
     </style>
@@ -121,22 +132,27 @@
         <p class="signature">—— 小楠</p>
     </div>
 
+    <!-- 背景音乐 -->
     <div class="music">
         <audio id="music">
             <source src="爱里.mp3" type="audio/mp3">
         </audio>
     </div>
 
+    <!-- 按钮触发 -->
     <button class="button" id="playMusicBtn">点我召唤BGM</button>
 
     <script>
+        // 获取按钮和音频元素
         const playMusicBtn = document.getElementById('playMusicBtn');
         const music = document.getElementById('music');
 
+        // 点击按钮播放音乐并隐藏按钮
         playMusicBtn.addEventListener('click', () => {
             // 播放音乐
             music.play();
 
+            // 隐藏按钮
             playMusicBtn.style.display = 'none';
         });
     </script>
