@@ -413,17 +413,6 @@ section.container>form.flip>.front {
 	top: -140px;
 }
 
-/* 最佳效果：不缩小字体 + 完整显示 + 不超出 */
-#letter .flip .back p[style*="px"] {
-    white-space: nowrap !important;
-    text-align: justify !important;
-    text-align-last: right !important;
-    padding-right: 20px !important;
-    padding-left: 20px !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-}
-
 .letter {
 	font-family: cursive;
 }
