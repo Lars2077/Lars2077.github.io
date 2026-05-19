@@ -33,7 +33,7 @@
 }
 
 #recipient {
-	font-size: 1.5em;
+	font-size: 1.8em; /* 收件人字体放大 */
 	line-height: 1.6;
 	float: left;
 	cursor: default;
@@ -59,7 +59,7 @@
 	position: fixed;
 	bottom: 5px;
 	right: 3px;
-	font-size: 20px;
+	font-size: 24px; /* 寄件人字体放大 */
 }
 
 #close {
@@ -75,9 +75,9 @@
 /**************container***************/
 section.container {
 	position: relative;
-	width: 600px;
-	height: 300px;
-	margin: 280px auto 0;
+	width: 700px; /* 信封宽度放大 */
+	height: 400px; /* 信封高度放大 */
+	margin: 250px auto 0; /* 调整垂直居中位置 */
 	perspective: 1000px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
@@ -237,14 +237,14 @@ section.container>form.flip .front {
 }
 
 section.container>form.flip>.front {
-	font-size: 1.25em;
+	font-size: 1.4em; /* 信封正面字体放大 */
 	background: beige url("../img/texture.png");
 	padding: 120px 20px 20px 40%;
 	border: 1px #eae1d5 solid;
 }
 
 #lid .flip .front {
-	font-size: 1.25em;
+	font-size: 1.4em; /* 信封盖字体放大 */
 	border-radius: 0 0 40px 40px;
 }
 
@@ -403,8 +403,8 @@ section.container>form.flip>.front {
 	background: -webkit-linear-gradient(top, #fafafa 90%, #f7f7f7 100%);
 	background: -moz-linear-gradient(top, #fafafa 80%, #f7f7f7 100%);
 	padding: 40px 40px 0;
-	font-size: 18px;
-	line-height: 1.4;
+	font-size: 22px; /* 信纸内容字体放大 */
+	line-height: 1.6; /* 行高增大，提高可读性 */
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	box-shadow: 0 -5px 8px -4px rgba(0, 0, 0, 0.15);
 }
