@@ -413,6 +413,15 @@ section.container>form.flip>.front {
 	top: -140px;
 }
 
+#letter .flip .back p[style*="px"] {
+  white-space: nowrap !important;
+  text-align: right !important;
+  padding-right: 10px !important;
+  max-width: calc(100% - 20px) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
 .letter {
 	font-family: cursive;
 }
